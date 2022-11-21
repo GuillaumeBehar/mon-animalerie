@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% for animal in animals %}
+<div class="animal">
+    <h2><a href = "{%url 'animal_detail' id_animal=animal.id_animal %}">{{animal.id_animal}}</a></h2>
+    <img src=animal.photo alt={{animal.photo}}/>
+    <div class="état">
+        <p>Etat: {{ animal.etat}}</p>
+    </div>
+    <div class=""lieu">
+    <p>Lieu: {{animal.lieu}}</p>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
